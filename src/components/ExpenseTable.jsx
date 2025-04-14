@@ -3,10 +3,7 @@ import React from "react";
 const ExpenseTable = ({ expenses, onDelete }) => {
   return (
     <table
-      border="1"
-      cellPadding="10"
-      cellSpacing="0"
-      style={{ width: "100%" }}
+    
     >
       <thead>
         <tr>

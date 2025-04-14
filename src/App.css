@@ -5,8 +5,8 @@
   text-align: center;
 }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
+  font-family: sans-serif;
+  background-color: darkgrey;
   margin: 0;
   padding: 0;
 }
@@ -14,10 +14,10 @@ body {
 .container {
   max-width: 800px;
   margin: auto;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
 }
 
 h1 {
@@ -70,4 +70,3 @@ th {
 tr:hover {
   background-color: #f1f3f5;
 }
-
