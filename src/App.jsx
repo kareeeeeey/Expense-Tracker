@@ -17,6 +17,7 @@ const App = () => {
   const handleDeleteExpense = (id) => {
     setExpenses(expenses.filter((expense) => expense.id !== id));
   };
+  
 
   const handleSortToggle = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
