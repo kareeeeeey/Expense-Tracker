@@ -1,23 +1,22 @@
 import React, { useState } from "react";
-import ExpenseForm from "./components/ExpenseForm.jsx";
-import ExpenseTable from "./components/ExpenseTable.jsx";
-import SearchBar from "./components/SearchBar.jsx";
+import ExpenseForm from "./components/ExpenseForm";
+import ExpenseTable from "./components/ExpenseTable";
+import SearchBar from "./components/SearchBar";
 import "./App.css";
-
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOrder, setSortOrder] = useState("asc"); // for sorting
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const handleAddExpense = (newExpense) => {
-    setExpenses([...expenses, newExpense]);
+    const expenseWithId = { ...newExpense, id: Date.now() };
+    setExpenses([...expenses, expenseWithId]);
   };
 
   const handleDeleteExpense = (id) => {
     setExpenses(expenses.filter((expense) => expense.id !== id));
   };
-  
 
   const handleSortToggle = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -32,11 +31,11 @@ const App = () => {
     );
 
   return (
-    <div className="container" style={{ padding: "2rem" }}>
+    <div className="container">
       <h1>💸 Expense Tracker</h1>
       <ExpenseForm onAddExpense={handleAddExpense} />
       <SearchBar onSearch={setSearchTerm} />
-      <button onClick={handleSortToggle} style={{ marginBottom: "1rem" }}>
+      <button onClick={handleSortToggle} className="sort-btn">
         Sort by Amount ({sortOrder === "asc" ? "⬆️ Ascending" : "⬇️ Descending"}
         )
       </button>
